@@ -71,9 +71,8 @@ public abstract class Logger {
             Method method = conf.getClass().getMethod("dumpConfiguration", new Class[]{});
             method.setAccessible(true);
             method.invoke(conf);
-        } catch (IllegalAccessException ignore) {
-        } catch (InvocationTargetException ignore) {
-        } catch (NoSuchMethodException ignore) {
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

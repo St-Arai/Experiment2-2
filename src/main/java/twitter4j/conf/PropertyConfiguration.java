@@ -166,7 +166,7 @@ public final class PropertyConfiguration extends ConfigurationBase implements ja
                 normalize(props);
                 return true;
             }
-        } catch (Exception ignore) {
+        } catch (IOException ignore) {
         } finally {
             try {
                 if (fis != null) {
