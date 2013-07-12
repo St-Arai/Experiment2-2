@@ -48,7 +48,7 @@ public final class OEmbedRequest implements Serializable {
         this.maxWidth = maxWidth;
     }
 
-    public OEmbedRequest MaxWidth(int maxWidth) {
+    public OEmbedRequest maxWidth(int maxWidth) {
         this.maxWidth = maxWidth;
         return this;
     }
@@ -66,7 +66,7 @@ public final class OEmbedRequest implements Serializable {
         this.hideThread = hideThread;
     }
 
-    public OEmbedRequest HideThread(boolean hideThread) {
+    public OEmbedRequest hideThread(boolean hideThread) {
         this.hideThread = hideThread;
         return this;
     }
