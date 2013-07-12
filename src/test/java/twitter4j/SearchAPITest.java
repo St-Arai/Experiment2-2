@@ -113,9 +113,6 @@ public class SearchAPITest extends TwitterTestBase {
         assertEquals(4171231, queryResult.getTweets().get(0).getUser().getId());
         assertTrue(queryResult.hasNext());
         assertNotNull(queryResult.nextQuery());
-
-        query = new Query("\\u5e30%u5e30 <%}& foobar").count(100);
-        QueryResult result = twitter1.search(query);
     }
 
     public void testEasyPaging() throws Exception {

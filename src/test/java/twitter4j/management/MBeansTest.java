@@ -140,7 +140,7 @@ public class MBeansTest extends TestCase {
         Long callCount = (Long) openMBean.getAttribute("callCount");
         assertEquals(0, callCount.longValue());
         Long errorCount = (Long) openMBean.getAttribute("errorCount");
-        assertEquals(0, callCount.longValue());
+        assertEquals(0, errorCount.longValue());
         Long totalTime = (Long) openMBean.getAttribute("totalTime");
         assertEquals(0, totalTime.longValue());
         Long averageTime = (Long) openMBean.getAttribute("averageTime");

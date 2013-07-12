@@ -67,7 +67,7 @@ public class ConfigurationTest extends TestCase {
     }
 
     public void testConfiguration() throws Exception {
-        ConfigurationBase conf = new PropertyConfiguration();
+        ConfigurationBase conf;
 
         String test = "t4j";
         String override = "system property";
@@ -234,7 +234,6 @@ public class ConfigurationTest extends TestCase {
         // useSSL doesn't take effect if restBaseURL is explicitly specified.
         assertEquals("http://somewhere.com/", conf.getRestBaseURL());
         deleteFile("./twitter4j.properties");
-        conf = new PropertyConfiguration();
 
         // uses SSL by default
         System.getProperties().remove("twitter4j.http.useSSL");
@@ -321,8 +320,6 @@ public class ConfigurationTest extends TestCase {
         builder = new ConfigurationBuilder();
         conf = builder.build();
 
-        Configuration t = (Configuration) serializeDeserialize(conf);
-
         assertEquals(conf, (Configuration) serializeDeserialize(conf));
 
         assertTrue(0 == conf.getRestBaseURL().indexOf("http://"));
@@ -399,7 +396,6 @@ public class ConfigurationTest extends TestCase {
     }
 
     public void testEnvironmentVariableBasedConfiguration() throws Exception{
-        Configuration conf = ConfigurationContext.getInstance();
         // perquisite: export twitter4j.debug=true
 //        assertTrue(conf.isDebugEnabled());
         // perquisite: export twitter4j.debug=false
