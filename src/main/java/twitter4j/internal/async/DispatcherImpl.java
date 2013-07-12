@@ -51,7 +51,7 @@ final class DispatcherImpl implements Dispatcher {
             q.add(task);
         }
         synchronized (ticket) {
-            ticket.notify();
+            ticket.notifyAll();
         }
     }
 
@@ -87,7 +87,7 @@ final class DispatcherImpl implements Dispatcher {
                 thread.shutdown();
             }
             synchronized (ticket) {
-                ticket.notify();
+                ticket.notifyAll();
             }
         }
     }
