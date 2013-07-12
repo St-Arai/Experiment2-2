@@ -604,7 +604,7 @@ public class JSONArray {
         try {
             return '[' + join(",") + ']';
         } catch (Exception e) {
-            return;
+            return "";
         }
     }
 
