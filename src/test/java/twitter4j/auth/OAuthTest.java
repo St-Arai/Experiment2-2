@@ -232,7 +232,7 @@ public class OAuthTest extends TwitterTestBase {
 
     public void testBrowserClientWithCustomCallback() throws Exception {
         RequestToken rt;
-        Twitter twitter = new TwitterFactory().getInstance();
+        Twitter twitter;
         HttpClientImpl http;
         HttpResponse response;
         String resStr;
@@ -240,7 +240,6 @@ public class OAuthTest extends TwitterTestBase {
         HttpParameter[] params;
         AccessToken at;
         String cookie;
-        http = new HttpClientImpl();
 
         // browser client - not requiring pin / overriding callback url
         twitter = new TwitterFactory().getInstance();
@@ -410,7 +409,6 @@ public class OAuthTest extends TwitterTestBase {
             props.load(is);
             Configuration conf = new PropertyConfiguration(props);
             twitter = new TwitterFactory(conf).getInstance();
-            AccessToken at = twitter.getOAuthAccessToken(id1.screenName, id1.password);
             twitter.updateStatus(new Date() + ": xAuth test.");
 
             twitter = new TwitterFactory().getInstance();

@@ -126,9 +126,6 @@ public class TweetsResourcesTest extends TwitterTestBase {
         assertEquals(31536000000L,oembed.getCacheAge());
         assertEquals("http://twitter.com/jasoncosta",oembed.getAuthorURL());
         assertTrue(0 < oembed.getWidth());
-
-        oembed = twitter1.getOEmbed(new OEmbedRequest(273685580615913473L,"http://samuraism.com/"));
-
     }
 
     public void testEntities() throws Exception {

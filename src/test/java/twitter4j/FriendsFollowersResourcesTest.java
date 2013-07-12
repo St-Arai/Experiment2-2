@@ -152,13 +152,13 @@ public class FriendsFollowersResourcesTest extends TwitterTestBase {
 //        User detail = twitterAPI2.showUser(id1);
 //        assertTrue(detail.isNotificationEnabled());
         try {
-            user = twitter2.createFriendship(id2.screenName);
+            twitter2.createFriendship(id2.screenName);
             fail("shouldn't be able to befrinend yourself");
         } catch (TwitterException te) {
             assertEquals(403, te.getStatusCode());
         }
         try {
-            user = twitter2.createFriendship("doesnotexist--");
+            twitter2.createFriendship("doesnotexist--");
             fail("non-existing user");
         } catch (TwitterException te) {
             //now befriending with non-existing user returns 404

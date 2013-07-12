@@ -32,7 +32,6 @@ public class SizeofStatusChecker {
         DocumentBuilder builder = null;
         builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
         int count = 10000;
-        Status[] statuses = new Status[count];
         long before;
         System.gc();
         before = Runtime.getRuntime().freeMemory();
