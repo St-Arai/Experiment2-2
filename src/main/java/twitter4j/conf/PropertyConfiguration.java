@@ -119,8 +119,10 @@ public final class PropertyConfiguration extends ConfigurationBase implements ja
             props = (Properties) System.getProperties().clone();
             try {
                 Map<String, String> envMap = System.getenv();
-                for(String key :envMap.keySet()){
-                    props.setProperty(key, envMap.get(key));
+                for (Map.Entry<String, String>entry : envMap.entrySet()){
+                    String key = entry.getKey();
+                    String value = entry.getValue();
+                    props.setProperty(key, value);
                 }
             }catch(SecurityException ignore){}
             normalize(props);
