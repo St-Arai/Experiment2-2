@@ -161,7 +161,8 @@ public class JSONObject {
         for (int i = 0; i < names.length; i += 1) {
             try {
                 putOnce(names[i], jo.opt(names[i]));
-            } catch (Exception ignore) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
@@ -291,7 +292,16 @@ public class JSONObject {
             String name = names[i];
             try {
                 putOpt(name, c.getField(name).get(object));
-            } catch (Exception ignore) {
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -936,7 +946,7 @@ public class JSONObject {
                 } catch (Exception ignore) {
                 }
             }
-            try {
+            //try {
                 if (string.indexOf('.') > -1 ||
                         string.indexOf('e') > -1 || string.indexOf('E') > -1) {
                     return Double.valueOf(string);
@@ -948,8 +958,8 @@ public class JSONObject {
                         return myLong;
                     }
                 }
-            } catch (Exception ignore) {
-            }
+            //} catch (Exception ignore) {
+            //}
         }
         return string;
     }
