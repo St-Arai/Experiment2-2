@@ -219,14 +219,11 @@ public final class PropertyConfiguration extends ConfigurationBase implements ja
         setFieldsWithPrefix(props, "");
         String[] splitArray = z_T4JInternalStringUtil.split(treePath, "/");
         String prefix = null;
+        StringBuilder sb = new StringBuilder();
         for (String split : splitArray) {
             if (!"".equals(split)) {
-                if (null == prefix) {
-                    prefix = split + ".";
-                } else {
-                    prefix += split + ".";
-                }
-                setFieldsWithPrefix(props, prefix);
+                sb.append(split).append(".");
+                setFieldsWithPrefix(props, sb.toString());
             }
         }
     }
