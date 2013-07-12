@@ -108,11 +108,11 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
             
             // descriptionUrlEntities <=> entities/descriptions/urls[]
             descriptionURLEntities = getURLEntitiesFromJSON(json, "description");
-            descriptionURLEntities = descriptionURLEntities == null ? new URLEntity[0] : descriptionURLEntities;
+            descriptionURLEntities = descriptionURLEntities;
             
             // urlEntity <=> entities/url/urls[]
             URLEntity[] urlEntities = getURLEntitiesFromJSON(json, "url");
-            if (urlEntities != null && urlEntities.length > 0) {
+            if (urlEntities.length > 0) {
                 urlEntity = urlEntities[0];
             }
             
@@ -187,7 +187,7 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
                 }
             }
         }
-        return null;
+        return new URLEntity[0];
     }
 
     @Override

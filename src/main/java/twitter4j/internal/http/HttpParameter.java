@@ -260,6 +260,7 @@ public final class HttpParameter implements Comparable, java.io.Serializable {
         try {
             encoded = URLEncoder.encode(value, "UTF-8");
         } catch (UnsupportedEncodingException ignore) {
+            encoded = "";
         }
         StringBuilder buf = new StringBuilder(encoded.length());
         char focus;

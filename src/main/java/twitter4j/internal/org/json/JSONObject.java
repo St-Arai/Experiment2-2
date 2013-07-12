@@ -1006,7 +1006,7 @@ public class JSONObject {
             sb.append('}');
             return sb.toString();
         } catch (Exception e) {
-            return null;
+            return "";
         }
     }
 
@@ -1110,7 +1110,7 @@ public class JSONObject {
      * @throws JSONException If the value is or contains an invalid number.
      */
     public static String valueToString(Object value) throws JSONException {
-        if (value == null || value.equals(null)) {
+        if (value == null) {
             return "null";
         }
         if (value instanceof Number) {
@@ -1150,7 +1150,7 @@ public class JSONObject {
      */
     static String valueToString(Object value, int indentFactor, int indent)
             throws JSONException {
-        if (value == null || value.equals(null)) {
+        if (value == null) {
             return "null";
         }
         if (value instanceof Number) {
