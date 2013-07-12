@@ -498,11 +498,10 @@ public final class DataObjectFactory {
             JSONObjectType.Type jsonObjectType = JSONObjectType.determine(json);
             switch (jsonObjectType) {
                 case SENDER:
+                case DIRECT_MESSAGE:
                     return registerJSONObject(directMessageConstructor.newInstance(json.getJSONObject("direct_message")), json);
                 case STATUS:
                     return registerJSONObject(statusConstructor.newInstance(json), json);
-                case DIRECT_MESSAGE:
-                    return registerJSONObject(directMessageConstructor.newInstance(json.getJSONObject("direct_message")), json);
                 case DELETE:
                     return registerJSONObject(statusDeletionNoticeConstructor.newInstance(json.getJSONObject("delete").getJSONObject("status")), json);
                 case LIMIT:
