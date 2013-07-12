@@ -50,9 +50,9 @@ class StatusDeletionNoticeImpl implements StatusDeletionNotice, java.io.Serializ
     public int compareTo(StatusDeletionNotice that) {
         long delta = this.statusId - that.getStatusId();
         if (delta < Integer.MIN_VALUE) {
-            return Integer.MIN_VALUE;
+            return -1;
         } else if (delta > Integer.MAX_VALUE) {
-            return Integer.MAX_VALUE;
+            return 1;
         }
         return (int) delta;
     }

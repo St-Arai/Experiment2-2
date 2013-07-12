@@ -201,9 +201,9 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
     public int compareTo(Status that) {
         long delta = this.id - that.getId();
         if (delta < Integer.MIN_VALUE) {
-            return Integer.MIN_VALUE;
+            return -1;
         } else if (delta > Integer.MAX_VALUE) {
-            return Integer.MAX_VALUE;
+            return 1;
         }
         return (int) delta;
     }

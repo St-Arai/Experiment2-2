@@ -28,9 +28,9 @@ abstract class EntityIndex implements Comparable<EntityIndex>, java.io.Serializa
     public int compareTo(EntityIndex that) {
         long delta = this.start - that.start;
         if (delta < Integer.MIN_VALUE) {
-            return Integer.MIN_VALUE;
+            return -1;
         } else if (delta > Integer.MAX_VALUE) {
-            return Integer.MAX_VALUE;
+            return 1;
         }
         return (int) delta;
     }
