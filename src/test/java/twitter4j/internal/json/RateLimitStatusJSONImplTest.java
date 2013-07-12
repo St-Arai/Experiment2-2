@@ -48,7 +48,7 @@ public class RateLimitStatusJSONImplTest extends TestCase {
         assertTrue(status.getResetTimeInSeconds() > (System.currentTimeMillis() / 1000) + 13 * 60);
     }
 
-    class MockHttpResponse extends HttpResponse {
+    static class MockHttpResponse extends HttpResponse {
 
         MockHttpResponse() {
             super(null);
