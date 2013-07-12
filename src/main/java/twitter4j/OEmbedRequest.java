@@ -57,7 +57,7 @@ public final class OEmbedRequest implements Serializable {
         this.hideMedia = hideMedia;
     }
 
-    public OEmbedRequest HideMedia(boolean hideMedia) {
+    public OEmbedRequest hideMedia(boolean hideMedia) {
         this.hideMedia = hideMedia;
         return this;
     }

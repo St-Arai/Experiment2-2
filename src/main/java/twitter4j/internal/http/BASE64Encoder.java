@@ -63,8 +63,14 @@ public final class BASE64Encoder {
                             currentByte |= (from[i + 1] & lead4byte) >>> 4;
                         }
                         break;
+<<<<<<< HEAD
                     default:
                     	break;
+=======
+                        
+                        default:
+                        	break;
+>>>>>>> 9f336e0e2c5492842945144bf37e62508424f53b
                 }
                 to.append(encodeTable[currentByte]);
                 num += 6;
