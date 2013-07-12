@@ -53,12 +53,6 @@ public class TimeSpanConverterTest extends TestCase {
         return cal.getTimeInMillis();
     }
 
-    private long getCurrentYear() {
-        // Re-create the instance in case these tests are multi-threaded.
-        Calendar cal = Calendar.getInstance();
-        return cal.get(Calendar.YEAR);
-    }
-
     public void testItalian() throws Exception {
         converter = new TimeSpanConverter(Locale.ITALIAN);
         assertTimeSpanString("Ora", System.currentTimeMillis() - second);

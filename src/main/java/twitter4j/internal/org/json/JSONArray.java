@@ -507,7 +507,7 @@ public class JSONArray {
      *                       not finite.
      */
     public JSONArray put(int index, double value) throws JSONException {
-        put(index, new Double(value));
+        put(index, Double.valueOf(value));
         return this;
     }
 
