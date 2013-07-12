@@ -182,7 +182,7 @@ public class HttpClientImpl extends HttpClientBase implements HttpResponseCode, 
                     res.asString();
                 }
                 logger.debug("Sleeping " + CONF.getHttpRetryIntervalSeconds() + " seconds until the next retry.");
-                Thread.sleep(CONF.getHttpRetryIntervalSeconds() * 1000);
+                Thread.sleep((long)CONF.getHttpRetryIntervalSeconds() * 1000);
             } catch (InterruptedException ignore) {
                 //nothing to do
             }
