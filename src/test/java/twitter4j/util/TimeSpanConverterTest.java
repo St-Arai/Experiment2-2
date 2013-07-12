@@ -30,7 +30,7 @@ public class TimeSpanConverterTest extends TestCase {
     int minute = second * 60;
     int hour = minute * 60;
 
-    TimeSpanConverter converter;
+    TimeSpanConverter converter = null;
 
     protected void setUp() throws Exception {
         super.setUp();
