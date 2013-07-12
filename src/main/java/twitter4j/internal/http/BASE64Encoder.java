@@ -65,7 +65,6 @@ public final class BASE64Encoder {
                         break;
                     default:
                         break;
-
                 }
                 to.append(encodeTable[currentByte]);
                 num += 6;
