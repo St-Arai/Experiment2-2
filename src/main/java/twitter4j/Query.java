@@ -51,15 +51,6 @@ public final class Query implements java.io.Serializable {
         this.query = query;
     }
 
-    // edit with caution!!!
-    // this method is referenced by twitter4j.internal.json.QueryResultJSONImpl using reflection API in order to make this method invisible to library users
-    // you must run twitter4j.SearchAPITest#testEasyPaging to ensure you're doing right to make any changes to this method
-    private static Query createWithNextPageQuery(String nextPageQuery) {
-        Query query = new Query();
-        query.nextPageQuery = nextPageQuery;
-        return query;
-    }
-
     /**
      * Returns the specified query
      *
