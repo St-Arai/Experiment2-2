@@ -108,7 +108,6 @@ import static twitter4j.internal.json.z_T4JInternalParseUtil.*;
             
             // descriptionUrlEntities <=> entities/descriptions/urls[]
             descriptionURLEntities = getURLEntitiesFromJSON(json, "description");
-            descriptionURLEntities = descriptionURLEntities;
             
             // urlEntity <=> entities/url/urls[]
             URLEntity[] urlEntities = getURLEntitiesFromJSON(json, "url");
