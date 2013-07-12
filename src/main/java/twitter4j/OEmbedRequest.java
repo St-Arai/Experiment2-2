@@ -48,7 +48,7 @@ public final class OEmbedRequest implements Serializable {
         this.maxWidth = maxWidth;
     }
 
-    public OEmbedRequest MaxWidth(int maxWidth) {
+    public OEmbedRequest maxWidth(int maxWidth) {
         this.maxWidth = maxWidth;
         return this;
     }
